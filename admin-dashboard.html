@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Eventia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <div class="flex min-h-screen">
+    <aside class="w-64 shrink-0 border-r border-white/10 bg-slate-900/80 p-4 backdrop-blur" data-sidebar>
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="text-xl font-bold text-white">Eventia</a>
+        <button data-sidebar-toggle class="rounded bg-white/10 p-2 text-white lg:hidden"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav class="mt-6 space-y-2 text-sm font-semibold text-slate-200">
+        <a href="#" class="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2"><i class="fa-solid fa-chart-line"></i>Overview</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-users"></i>Attendees</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-microphone"></i>Speakers</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-calendar"></i>Schedule</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-ticket"></i>Tickets</a>
+        <a href="#" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-gear"></i>Settings</a>
+        <a href="login.html" class="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-white/10"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1">
+      <header class="flex items-center justify-between border-b border-white/10 bg-slate-900/70 px-6 py-4 backdrop-blur">
+        <div class="space-y-1">
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Dashboard</p>
+          <h1 class="text-2xl font-bold text-white">Overview</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="search" placeholder="Search" class="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-slate-400 lg:block" />
+          <button class="rounded-full border border-white/20 p-2 text-white" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+          <button type="button" data-rtl-toggle class="rounded-full border border-white/20 p-2 text-white" aria-label="RTL toggle"><i class="fa-solid fa-language"></i></button>
+          <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white"><img src="assets/images/placeholder-speaker-a.svg" class="h-8 w-8 rounded-full" alt="" /> Admin</div>
+        </div>
+      </header>
+
+      <main class="space-y-8 p-6">
+        <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4" data-dashboard-cards>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Attendees</p><p class="text-3xl font-bold text-white">5,200</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Revenue</p><p class="text-3xl font-bold text-white">$1.3M</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Sessions</p><p class="text-3xl font-bold text-white">140</p></div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Speakers</p><p class="text-3xl font-bold text-white">86</p></div>
+        </section>
+
+        <section class="grid gap-6 lg:grid-cols-2">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-white">Attendance (mock)</h2>
+              <span class="text-xs text-slate-300">Chart placeholder</span>
+            </div>
+            <div class="mt-4 h-48 rounded-2xl border border-dashed border-white/15 bg-white/5"></div>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-white">Upcoming sessions</h2>
+              <button class="text-xs text-sky-300">View all</button>
+            </div>
+            <ul class="mt-4 space-y-3 text-sm text-slate-200">
+              <li class="rounded-2xl border border-white/10 bg-white/5 p-3">Keynote • 10:00 • Main Hall</li>
+              <li class="rounded-2xl border border-white/10 bg-white/5 p-3">Workshop • 13:30 • Studio B</li>
+              <li class="rounded-2xl border border-white/10 bg-white/5 p-3">Panel • 15:00 • Forum</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-white">Recent registrations</h2>
+            <button class="text-xs text-sky-300" data-sort-table>Sort</button>
+          </div>
+          <div class="mt-4 overflow-x-auto">
+            <table class="min-w-full text-left text-sm text-slate-200" data-table>
+              <thead class="text-xs uppercase text-slate-400">
+                <tr><th class="px-3 py-2">Name</th><th class="px-3 py-2">Ticket</th><th class="px-3 py-2">Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="px-3 py-2">Alex Morgan</td><td class="px-3 py-2">Executive</td><td class="px-3 py-2">Paid</td></tr>
+                <tr><td class="px-3 py-2">Priya Shah</td><td class="px-3 py-2">Explorer</td><td class="px-3 py-2">Pending</td></tr>
+                <tr><td class="px-3 py-2">Leo Park</td><td class="px-3 py-2">Virtual</td><td class="px-3 py-2">Paid</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/rtl-toggle.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Eventia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <main class="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+    <div class="relative mb-8">
+      <div class="absolute inset-0 animate-pulse rounded-full bg-sky-500/20 blur-3xl"></div>
+      <p class="relative text-7xl font-black text-white">404</p>
+    </div>
+    <h1 class="text-3xl font-semibold text-white">Page not found</h1>
+    <p class="mt-2 max-w-md text-slate-300">We can’t find the page you’re looking for. Try searching or head back to safety.</p>
+    <form action="schedule.html" method="get" class="mt-6 flex w-full max-w-md flex-col gap-3 sm:flex-row">
+      <input name="q" type="search" placeholder="Search schedule" class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" />
+      <button type="submit" class="rounded-xl bg-sky-500 px-4 py-3 text-sm font-semibold text-white">Search</button>
+    </form>
+    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+      <a href="index.html" class="rounded-full bg-white px-4 py-2 text-slate-900">Back to Home</a>
+      <a href="schedule.html" class="rounded-full border border-white/30 px-4 py-2 text-white">View Schedule</a>
+      <a href="register.html" class="rounded-full border border-white/30 px-4 py-2 text-white">Register Now</a>
+      <a href="contact.html" class="rounded-full border border-white/30 px-4 py-2 text-white">Contact Us</a>
+    </div>
+  </main>
+</body>
+</html>

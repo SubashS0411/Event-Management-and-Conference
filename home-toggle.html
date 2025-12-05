@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventia Dual Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <a class="flex items-center gap-2 text-lg font-bold text-white" href="index.html"><span class="h-3 w-3 rounded-full bg-sky-400"></span>Eventia</a>
+      <nav class="flex items-center gap-6 text-sm font-semibold text-white">
+        <div class="relative" data-menu>
+          <button class="inline-flex items-center gap-2 rounded-md px-2 py-1 hover:text-sky-300" data-menu-button>
+            Home <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div class="absolute left-0 mt-2 hidden w-48 rounded-2xl bg-white p-2 text-slate-900 shadow-xl" data-menu-list>
+            <button data-home-option="A" class="block w-full rounded-lg px-3 py-2 text-left hover:bg-slate-100">Home Version 1</button>
+            <button data-home-option="B" class="block w-full rounded-lg px-3 py-2 text-left hover:bg-slate-100">Home Version 2</button>
+          </div>
+        </div>
+        <a href="event-details.html" class="hover:text-sky-300">Event Details</a>
+        <a href="schedule.html" class="hover:text-sky-300">Schedule</a>
+        <a href="contact.html" class="hover:text-sky-300">Contact</a>
+        <div class="relative" data-menu>
+          <button class="inline-flex items-center gap-2 rounded-md px-2 py-1 hover:text-sky-300" data-menu-button>
+            Dashboard <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div class="absolute left-0 mt-2 hidden w-48 rounded-2xl bg-white p-2 text-slate-900 shadow-xl" data-menu-list>
+            <a href="admin-dashboard.html" class="block rounded-lg px-3 py-2 hover:bg-slate-100">Admin Dashboard</a>
+            <a href="user-dashboard.html" class="block rounded-lg px-3 py-2 hover:bg-slate-100">User Dashboard</a>
+          </div>
+        </div>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="rtlToggle" class="rounded-full border border-white/20 px-3 py-2 text-sm text-white" aria-label="Toggle RTL"><i class="fa-solid fa-language"></i></button>
+        <a href="login.html" class="rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-400">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section id="homeA" class="min-h-screen bg-gradient-to-br from-sky-500/40 via-purple-600/30 to-slate-900 px-4 py-16">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div class="space-y-6">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white">Flagship</p>
+          <h1 class="text-4xl font-bold text-white">Eventia Summit 2025</h1>
+          <p class="text-lg text-slate-100/90">Four days of future-ready experiences blending design, production, and technology.</p>
+          <div class="flex gap-3">
+            <a href="register.html" class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow hover:bg-slate-100">Register</a>
+            <a href="schedule.html" class="rounded-full border border-white/70 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">View Schedule</a>
+          </div>
+          <div class="flex flex-wrap gap-4 text-sm text-white/90">
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><i class="fa-solid fa-calendar"></i> Apr 22-25</span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><i class="fa-solid fa-location-dot"></i> Dubai</span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><i class="fa-solid fa-video"></i> Hybrid</span>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-2xl">
+          <div class="grid grid-cols-2 gap-4 text-center text-white">
+            <div class="rounded-2xl bg-slate-900/60 p-4"><p class="text-3xl font-bold">5k+</p><p class="text-xs uppercase tracking-[0.25em] text-slate-300">Attendees</p></div>
+            <div class="rounded-2xl bg-slate-900/60 p-4"><p class="text-3xl font-bold">80+</p><p class="text-xs uppercase tracking-[0.25em] text-slate-300">Speakers</p></div>
+            <div class="rounded-2xl bg-slate-900/60 p-4"><p class="text-3xl font-bold">140</p><p class="text-xs uppercase tracking-[0.25em] text-slate-300">Sessions</p></div>
+            <div class="rounded-2xl bg-slate-900/60 p-4"><p class="text-3xl font-bold">48</p><p class="text-xs uppercase tracking-[0.25em] text-slate-300">Countries</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="homeB" class="hidden min-h-screen bg-slate-900 px-4 py-16">
+      <div class="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-gradient-to-r from-orange-500/20 via-purple-500/10 to-sky-500/15 p-10 shadow-xl">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div class="space-y-5">
+            <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white">Alt Home</p>
+            <h2 class="text-4xl font-bold text-white">Design-forward, intimate experience hub.</h2>
+            <p class="text-slate-200">A minimal, editorial layout focusing on narrative, with layered glassmorphism cards and crisp typography.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="register.html" class="rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-orange-400">Save Seat</a>
+              <a href="contact.html" class="rounded-full border border-white/70 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Talk to us</a>
+            </div>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+              <p class="text-xs uppercase tracking-[0.3em] text-orange-200">Why attend</p>
+              <p class="mt-2 text-sm text-slate-100">Keynotes, labs, curated networking.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+              <p class="text-xs uppercase tracking-[0.3em] text-purple-200">Venue</p>
+              <p class="mt-2 text-sm text-slate-100">Dubai World Trade Centre with hybrid broadcast.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+              <p class="text-xs uppercase tracking-[0.3em] text-sky-200">Community</p>
+              <p class="mt-2 text-sm text-slate-100">5k peers across 45+ countries.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+              <p class="text-xs uppercase tracking-[0.3em] text-emerald-200">Access</p>
+              <p class="mt-2 text-sm text-slate-100">Hybrid, on-demand, and lounges.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const homeA = document.getElementById('homeA');
+    const homeB = document.getElementById('homeB');
+    const rtlBtn = document.getElementById('rtlToggle');
+
+    const setHome = (choice) => {
+      const isA = choice === 'A';
+      homeA.classList.toggle('hidden', !isA);
+      homeB.classList.toggle('hidden', isA);
+    };
+
+    document.querySelectorAll('[data-home-option]').forEach(btn => {
+      btn.addEventListener('click', () => setHome(btn.dataset.homeOption));
+    });
+    setHome('A');
+
+    document.querySelectorAll('[data-menu]').forEach(menu => {
+      const trigger = menu.querySelector('[data-menu-button]');
+      const list = menu.querySelector('[data-menu-list]');
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        list.classList.toggle('hidden');
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('[data-menu-list]').forEach(l => l.classList.add('hidden'));
+    });
+
+    rtlBtn.addEventListener('click', () => {
+      const html = document.documentElement;
+      html.dir = html.dir === 'rtl' ? 'ltr' : 'rtl';
+    });
+  </script>
+</body>
+</html>

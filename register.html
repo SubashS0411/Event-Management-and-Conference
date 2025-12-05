@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Eventia Summit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{font-family:'Inter',sans-serif}
+    .group:hover .group-hover\:block,
+    .group .group-hover\:block:hover {
+      display: block;
+    }
+    .group .group-hover\:block {
+      transition: opacity 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded">Skip to main</a>
+  <header data-header class="fixed top-0 left-0 z-50 w-full transition-all duration-300">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+      <a href="index.html" class="text-xl font-bold text-white">Eventia</a>
+      <button type="button" data-nav-toggle class="inline-flex items-center justify-center rounded bg-white/10 px-3 py-2 text-white shadow lg:hidden" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <div data-nav-menu class="fixed inset-x-4 top-20 hidden flex-col gap-4 rounded-2xl bg-slate-900/95 p-6 shadow-2xl backdrop-blur lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:p-0 lg:shadow-none">
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1 text-sm font-semibold text-white hover:text-sky-300">
+            Home <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div class="hidden group-hover:block absolute left-0 top-full mt-2 w-40 rounded-xl bg-slate-800 shadow-xl border border-white/20 overflow-hidden z-50">
+            <a href="index.html" class="block px-4 py-3 text-sm font-medium text-white hover:bg-slate-700">Home 1</a>
+            <a href="home2.html" class="block px-4 py-3 text-sm font-medium text-white hover:bg-slate-700">Home 2</a>
+          </div>
+        </div>
+        <a href="event-details.html" class="text-sm font-semibold hover:text-sky-300">Event Details</a>
+        <a href="schedule.html" class="text-sm font-semibold hover:text-sky-300">Schedule</a>
+        <a href="register.html" class="text-sm font-semibold text-sky-300">Register</a>
+        <a href="contact.html" class="text-sm font-semibold hover:text-sky-300">Contact</a>
+        <button type="button" data-rtl-toggle class="flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:border-white/40"><i class="fa-solid fa-language"></i><span>RTL</span></button>
+        <a href="login.html" class="inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-400">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="pt-24">
+    <section class="relative overflow-hidden bg-slate-900/60">
+      <div class="absolute inset-0" style="background-image:url('assets/images/bg-abstract.svg');background-size:cover;background-position:center;mix-blend-mode:screen;opacity:0.4"></div>
+      <div class="absolute inset-0 bg-slate-950/70"></div>
+      <div class="relative mx-auto max-w-5xl px-4 py-12 text-center lg:px-8">
+        <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white">Registration</p>
+        <h1 class="mt-4 text-4xl font-bold text-white">Secure your seat</h1>
+        <p class="mt-2 text-slate-200">Complete the steps below to finalize your Eventia Summit experience.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div class="lg:col-span-2 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl">
+          <div class="flex items-center justify-between text-sm text-slate-200">
+            <div class="flex-1">
+              <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.25em] text-slate-300"><span>Step</span><span data-step-label>1/4</span></div>
+              <div class="mt-2 h-2 w-full rounded-full bg-white/10">
+                <div data-step-progress class="h-2 w-1/4 rounded-full bg-sky-500 transition-all"></div>
+              </div>
+            </div>
+          </div>
+
+          <form data-register-form novalidate class="space-y-6">
+            <div data-step="1" class="space-y-4">
+              <h3 class="text-xl font-semibold text-white">Personal Information</h3>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div><label class="text-sm text-slate-200">First Name</label><input required name="first" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Alex" /></div>
+                <div><label class="text-sm text-slate-200">Last Name</label><input required name="last" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Morgan" /></div>
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div><label class="text-sm text-slate-200">Email</label><input type="email" required name="email" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="you@email.com" /></div>
+                <div><label class="text-sm text-slate-200">Phone</label><input name="phone" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Optional" /></div>
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div><label class="text-sm text-slate-200">Company</label><input name="company" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Org" /></div>
+                <div><label class="text-sm text-slate-200">Job Title</label><input name="title" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Role" /></div>
+              </div>
+            </div>
+
+            <div data-step="2" class="hidden space-y-4">
+              <h3 class="text-xl font-semibold text-white">Registration Type</h3>
+              <div class="grid gap-4 md:grid-cols-3">
+                <label class="flex cursor-pointer flex-col gap-2 rounded-2xl border border-white/15 bg-white/5 p-4">
+                  <input type="radio" name="ticket" value="Explorer" class="hidden" checked />
+                  <span class="text-sm font-semibold text-white">Explorer</span>
+                  <span class="text-2xl font-bold text-white">$499</span>
+                  <span class="text-xs text-slate-300">Keynotes + Expo</span>
+                </label>
+                <label class="flex cursor-pointer flex-col gap-2 rounded-2xl border border-orange-400/40 bg-orange-500/10 p-4">
+                  <input type="radio" name="ticket" value="Executive" class="hidden" />
+                  <span class="text-sm font-semibold text-white">Executive</span>
+                  <span class="text-2xl font-bold text-white">$899</span>
+                  <span class="text-xs text-slate-100">Workshops + lounges</span>
+                </label>
+                <label class="flex cursor-pointer flex-col gap-2 rounded-2xl border border-white/15 bg-white/5 p-4">
+                  <input type="radio" name="ticket" value="Virtual" class="hidden" />
+                  <span class="text-sm font-semibold text-white">Virtual</span>
+                  <span class="text-2xl font-bold text-white">$249</span>
+                  <span class="text-xs text-slate-300">Stream + 30-day VOD</span>
+                </label>
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div><label class="text-sm text-slate-200">Dietary</label><input name="diet" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Veg, gluten-free" /></div>
+                <div><label class="text-sm text-slate-200">Accessibility</label><input name="access" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400" placeholder="Assistive needs" /></div>
+              </div>
+            </div>
+
+            <div data-step="3" class="hidden space-y-4">
+              <h3 class="text-xl font-semibold text-white">Preferences</h3>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="space-y-2 text-sm text-slate-200">
+                  <p class="font-semibold text-white">Session interests</p>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="interest" value="Design" class="h-4 w-4 rounded border-white/30 bg-white/10" />Design Leadership</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="interest" value="Production" class="h-4 w-4 rounded border-white/30 bg-white/10" />Production Ops</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="interest" value="Sustainability" class="h-4 w-4 rounded border-white/30 bg-white/10" />Sustainability</label>
+                </div>
+                <div class="space-y-2 text-sm text-slate-200">
+                  <label class="block">T-shirt size
+                    <select name="size" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white">
+                      <option>S</option><option>M</option><option>L</option><option>XL</option>
+                    </select>
+                  </label>
+                  <label class="block">Networking preference
+                    <select name="network" class="mt-2 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white">
+                      <option>Open to meetings</option>
+                      <option>Only scheduled</option>
+                      <option>Not available</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div data-step="4" class="hidden space-y-4">
+              <h3 class="text-xl font-semibold text-white">Review & Payment</h3>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200" data-review>We will summarize your choices here.</div>
+              <label class="inline-flex items-center gap-2 text-xs text-slate-200"><input type="checkbox" required name="terms" class="h-4 w-4 rounded border-white/30 bg-white/10" /> I agree to terms.</label>
+              <div class="rounded-2xl border border-dashed border-white/20 p-4 text-sm text-slate-300">Payment placeholder</div>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <button type="button" data-prev class="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:border-white">Back</button>
+              <button type="button" data-next class="rounded-full bg-sky-500 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-400">Next</button>
+              <button type="submit" data-submit class="hidden rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-400">Submit</button>
+            </div>
+            <p class="hidden text-sm text-emerald-300" data-success>Registered! Confirmation sent.</p>
+          </form>
+        </div>
+
+        <aside class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl">
+          <p class="text-sm uppercase tracking-[0.3em] text-slate-300">Summary</p>
+          <div class="mt-3 space-y-2 text-sm text-slate-200" data-summary>
+            <p>Ticket: Explorer</p>
+            <p>Price: $499</p>
+            <p>Dietary: -</p>
+          </div>
+          <div class="mt-6 space-y-3 text-xs text-slate-300">
+            <p><i class="fa-solid fa-circle-check text-emerald-400"></i> Hybrid access included</p>
+            <p><i class="fa-solid fa-circle-check text-emerald-400"></i> CMP credits eligible</p>
+            <p><i class="fa-solid fa-circle-check text-emerald-400"></i> Group discounts available</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950/80 py-12">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-4 lg:px-8">
+      <div><a href="index.html" class="text-xl font-bold text-white">Eventia</a><p class="mt-3 text-sm text-slate-300">Premium experiences crafted with intent.</p></div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-200">Explore</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-300">
+          <li><a href="event-details.html" class="hover:text-white">Event Details</a></li>
+          <li><a href="schedule.html" class="hover:text-white">Schedule</a></li>
+          <li><a href="register.html" class="hover:text-white">Register</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-200">Contact</h3>
+        <p class="mt-3 text-sm text-slate-300">hello@eventia.com<br/>+1 (415) 555-0123</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-200">Newsletter</h3>
+        <form data-validate novalidate class="mt-3 space-y-2">
+          <input type="email" name="email" required placeholder="you@email.com" class="w-full rounded-full border border-white/40 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:border-white" />
+          <p class="hidden text-xs text-rose-300" data-error>Email is required.</p>
+          <button type="submit" class="w-full rounded-full bg-sky-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-400">Join</button>
+          <p class="hidden text-xs text-emerald-300" data-success>Welcome aboard!</p>
+        </form>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-xs text-slate-400">© 2025 Eventia Summit.</div>
+  </footer>
+
+  <button type="button" data-scroll-top class="fixed bottom-6 right-6 hidden h-12 w-12 items-center justify-center rounded-full bg-sky-500 text-white shadow-lg shadow-sky-500/40 transition hover:bg-sky-400" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/rtl-toggle.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
