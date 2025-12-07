@@ -35,24 +35,125 @@
 
   // Nav + header behavior
   const header = qs('[data-header]');
+  const headerMode = header?.dataset.headerMode || 'light'; // 'light' expects dark text initially, 'dark' expects light text
   const navToggle = qs('[data-nav-toggle]');
   const navMenu = qs('[data-nav-menu]');
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => navMenu.classList.toggle('hidden'));
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+      onScroll(); // update colors immediately for mobile menu state
+    });
     document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) navMenu.classList.add('hidden');
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.add('hidden');
+        onScroll();
+      }
     });
   }
+  const initHomeToggle = () => {
+    // Setup dropdown menus for home switching
+    qsa('[data-home-switch]').forEach(switchContainer => {
+      const btn = switchContainer.querySelector('button');
+      const menu = switchContainer.querySelector('[data-home-menu]');
+      
+      if (!btn || !menu) return;
+      
+      // Toggle menu visibility on button click
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = menu.classList.contains('hidden');
+        
+        // Close all other menus first
+        qsa('[data-home-menu]').forEach(m => m.classList.add('hidden'));
+        
+        // Toggle this menu
+        if (isHidden) {
+          menu.classList.remove('hidden');
+        } else {
+          menu.classList.add('hidden');
+        }
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-home-switch]')) {
+        qsa('[data-home-menu]').forEach(menu => menu.classList.add('hidden'));
+      }
+    });
+  };
+
   const onScroll = () => {
     if (!header) return;
     const scrolled = window.scrollY > 12;
-    header.classList.toggle('bg-slate-950/80', scrolled);
-    header.classList.toggle('backdrop-blur', scrolled);
+    const menuOpen = navMenu && !navMenu.classList.contains('hidden');
+    const useDarkText = headerMode === 'light'
+      ? (!scrolled || menuOpen) // light headers default to dark text
+      : menuOpen; // dark headers stay light unless menu opens
+
+    // Toggle background and blur based on mode
+    if (headerMode === 'light') {
+      header.classList.toggle('bg-slate-950/80', scrolled && !menuOpen);
+      header.classList.toggle('bg-white', !scrolled || menuOpen);
+      header.classList.toggle('border-b', !scrolled || menuOpen);
+      header.classList.toggle('border-slate-200', !scrolled || menuOpen);
+      header.classList.toggle('backdrop-blur', scrolled || menuOpen);
+    } else {
+      header.classList.toggle('bg-white', menuOpen);
+      header.classList.toggle('border-b', menuOpen);
+      header.classList.toggle('border-slate-200', menuOpen);
+      header.classList.toggle('bg-slate-950/80', (scrolled || !menuOpen) && !menuOpen);
+      header.classList.toggle('backdrop-blur', scrolled || menuOpen);
+      if (!menuOpen) {
+        header.classList.remove('bg-white');
+        header.classList.remove('border-b');
+        header.classList.remove('border-slate-200');
+      }
+    }
+    
+    // Toggle text colors for all nav elements
+    const logo = header.querySelector('a[href="index.html"]');
+    const navLinks = header.querySelectorAll('[data-nav-menu] a, [data-nav-menu] button');
+    const rtlButton = header.querySelector('[data-rtl-toggle]');
+    const navToggle = header.querySelector('[data-nav-toggle]');
+    
+    if (logo) {
+      logo.classList.toggle('text-white', !useDarkText);
+      logo.classList.toggle('text-slate-900', useDarkText);
+    }
+    
+    navLinks.forEach(link => {
+      // Skip login button
+      if (link.href?.includes('login.html')) return;
+      
+      // Handle all nav links and buttons
+      link.classList.toggle('text-white', !useDarkText);
+      link.classList.toggle('text-slate-900', useDarkText);
+      link.classList.toggle('hover:text-sky-300', !useDarkText);
+      link.classList.toggle('hover:text-sky-600', useDarkText);
+    });
+    
+    if (rtlButton) {
+      rtlButton.classList.toggle('border-white/20', !useDarkText);
+      rtlButton.classList.toggle('text-white', !useDarkText);
+      rtlButton.classList.toggle('hover:border-white/40', !useDarkText);
+      rtlButton.classList.toggle('border-slate-300', useDarkText);
+      rtlButton.classList.toggle('text-slate-900', useDarkText);
+      rtlButton.classList.toggle('hover:border-slate-900', useDarkText);
+    }
+    
+    if (navToggle) {
+      navToggle.classList.toggle('bg-white/10', !useDarkText);
+      navToggle.classList.toggle('text-white', !useDarkText);
+      navToggle.classList.toggle('bg-slate-900', useDarkText);
+    }
+    
     const scrollTopBtn = qs('[data-scroll-top]');
     if (scrollTopBtn) scrollTopBtn.classList.toggle('hidden', window.scrollY < 240);
   };
   document.addEventListener('scroll', onScroll);
   onScroll();
+  initHomeToggle();
 
   // Smooth scroll for anchor links
   qsa('a[href^="#"]').forEach(link => {

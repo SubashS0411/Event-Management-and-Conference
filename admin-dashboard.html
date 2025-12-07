@@ -13,7 +13,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100">
   <div class="flex min-h-screen">
-    <aside class="w-64 shrink-0 border-r border-white/10 bg-slate-900/80 p-4 backdrop-blur" data-sidebar>
+    <aside class="w-64 shrink-0 border-r border-white/10 bg-slate-900/80 p-4 pt-24 backdrop-blur" data-sidebar>
       <div class="flex items-center justify-between">
         <a href="index.html" class="text-xl font-bold text-white">Eventia</a>
         <button data-sidebar-toggle class="rounded bg-white/10 p-2 text-white lg:hidden"><i class="fa-solid fa-bars"></i></button>
@@ -30,20 +30,41 @@
     </aside>
 
     <div class="flex-1">
-      <header class="flex items-center justify-between border-b border-white/10 bg-slate-900/70 px-6 py-4 backdrop-blur">
-        <div class="space-y-1">
-          <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Dashboard</p>
-          <h1 class="text-2xl font-bold text-white">Overview</h1>
-        </div>
-        <div class="flex items-center gap-3">
-          <input type="search" placeholder="Search" class="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-slate-400 lg:block" />
-          <button class="rounded-full border border-white/20 p-2 text-white" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
-          <button type="button" data-rtl-toggle class="rounded-full border border-white/20 p-2 text-white" aria-label="RTL toggle"><i class="fa-solid fa-language"></i></button>
-          <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white"><img src="assets/images/placeholder-speaker-a.svg" class="h-8 w-8 rounded-full" alt="" /> Admin</div>
-        </div>
+      <header data-header data-header-mode="dark" class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-slate-900/80 backdrop-blur">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+          <div class="flex items-center gap-3">
+            <a href="index.html" class="text-xl font-bold text-white">Eventia</a>
+            <button type="button" data-rtl-toggle class="inline-flex items-center justify-center rounded bg-white/10 px-3 py-2 text-white shadow" aria-label="Toggle RTL"><i class="fa-solid fa-language"></i></button>
+            <button type="button" data-nav-toggle class="inline-flex items-center justify-center rounded bg-white/10 px-3 py-2 text-white shadow lg:hidden" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+          </div>
+          <div data-nav-menu class="fixed inset-x-4 top-20 hidden flex-col gap-4 rounded-2xl bg-white/95 border border-slate-200 p-6 shadow-2xl backdrop-blur lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none">
+            <div class="relative inline-block" data-home-switch>
+              <button type="button" class="flex w-full items-center justify-between gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40 lg:w-auto lg:justify-start">
+                Home
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </button>
+              <div class="absolute left-0 top-full mt-2 hidden w-48 rounded-2xl border border-white/20 bg-slate-900/95 shadow-xl z-[120]" data-home-menu>
+                <a href="index.html" class="block px-4 py-3 text-sm font-semibold text-white hover:bg-white/10 transition">Home Version 1</a>
+                <a href="home2.html" class="block px-4 py-3 text-sm font-semibold text-white hover:bg-white/10 transition">Home Version 2</a>
+              </div>
+            </div>
+            <a href="event-details.html" class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Event Details</a>
+            <a href="schedule.html" class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Schedule</a>
+            <a href="register.html" class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Register</a>
+            <a href="contact.html" class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Contact</a>
+            <a href="user-dashboard.html" class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">User Dashboard</a>
+            <a href="admin-dashboard.html" class="block w-full text-start text-sm font-semibold text-sky-300 lg:w-auto">Admin Dashboard</a>
+            <div class="flex w-full flex-col gap-3 border-t border-slate-200/60 pt-3 lg:border-none lg:pt-0 lg:flex-row lg:items-center lg:gap-3">
+              <input type="search" placeholder="Search" class="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-slate-400 lg:block" />
+              <button class="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+              <div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white"><img src="assets/images/placeholder-speaker-a.svg" class="h-8 w-8 rounded-full" alt="" /> Admin</div>
+              <a href="login.html" class="inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-400 lg:w-auto">Logout</a>
+            </div>
+          </div>
+        </nav>
       </header>
 
-      <main class="space-y-8 p-6">
+      <main class="space-y-8 p-6 pt-24">
         <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4" data-dashboard-cards>
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Attendees</p><p class="text-3xl font-bold text-white">5,200</p></div>
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4"><p class="text-xs text-slate-300">Revenue</p><p class="text-3xl font-bold text-white">$1.3M</p></div>
