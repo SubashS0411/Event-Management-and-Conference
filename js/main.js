@@ -157,7 +157,7 @@
 
     navLinks.forEach(link => {
       // Skip login button and Home Dropdown links (they have static colors)
-      if (link.href?.includes('login.html') || link.closest('[data-home-menu]')) return;
+      if (link.href?.includes('login.html') || link.closest('[data-home-menu]') || link.closest('[data-dashboard-menu]')) return;
 
       // Handle all nav links and buttons
       link.classList.toggle('text-white', !useDarkText);
@@ -490,19 +490,19 @@
   const sidebarToggle = qs('[data-sidebar-toggle]');
   const sidebarClose = qs('[data-sidebar-close]');
   const sidebarOverlay = qs('[data-sidebar-overlay]');
-  
+
   const openSidebar = () => {
     if (sidebar) sidebar.classList.add('open');
     if (sidebarOverlay) sidebarOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
-  
+
   const closeSidebar = () => {
     if (sidebar) sidebar.classList.remove('open');
     if (sidebarOverlay) sidebarOverlay.classList.remove('open');
     document.body.style.overflow = '';
   };
-  
+
   if (sidebarToggle) {
     sidebarToggle.addEventListener('click', openSidebar);
   }

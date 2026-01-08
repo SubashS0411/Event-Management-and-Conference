@@ -109,14 +109,14 @@
         aria-label="Toggle navigation"><i class="fa-solid fa-bars text-base"></i></button>
       <div data-nav-menu
         class="fixed inset-x-4 top-20 hidden flex-col gap-4 space-y-2 rounded-2xl bg-white/95 border border-slate-200 p-6 shadow-2xl backdrop-blur lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:space-y-0 lg:bg-transparent lg:border-0 lg:p-0 lg:shadow-none">
-        <div class="relative inline-block" data-home-switch>
+        <div class="relative block w-full lg:inline-block lg:w-auto" data-home-switch>
           <button type="button"
             class="flex w-full items-center justify-between gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40 lg:w-auto lg:justify-start">
             Home
             <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div
-            class="absolute left-0 top-full mt-2 hidden w-48 rounded-2xl border border-white/10 bg-slate-900 shadow-xl z-[120]"
+            class="hidden w-full mt-2 rounded-xl border border-white/10 bg-slate-900 lg:absolute lg:ltr:left-0 lg:rtl:right-0 lg:top-full lg:w-48 lg:z-[120] lg:shadow-xl"
             data-home-menu>
             <a href="index.html"
               class="block px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-white/5 transition">Home Version
@@ -134,14 +134,14 @@
           class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Register</a>
         <a href="contact.html"
           class="block w-full text-start text-sm font-semibold hover:text-sky-300 lg:w-auto">Contact</a>
-        <div class="relative inline-block" data-dashboard-switch>
+        <div class="relative block w-full lg:inline-block lg:w-auto" data-dashboard-switch>
           <button type="button"
             class="flex w-full items-center justify-between gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40 lg:w-auto lg:justify-start">
             Dashboard
             <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div
-            class="absolute left-0 top-full mt-2 hidden w-48 rounded-2xl border border-white/10 bg-slate-900 shadow-xl z-[120]"
+            class="hidden w-full mt-2 rounded-xl border border-white/10 bg-slate-900 lg:absolute lg:ltr:left-0 lg:rtl:right-0 lg:top-full lg:w-48 lg:z-[120] lg:shadow-xl"
             data-dashboard-menu>
             <a href="admin-dashboard.html"
               class="block px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-white/5 transition">Admin
